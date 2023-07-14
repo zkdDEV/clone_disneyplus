@@ -12,6 +12,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
 
+        @media (max-width: 768px)
+        {
+            grid-template-columns: 1fr 1fr;
+        }
+
         &--is-active
         {
             display: grid;
@@ -32,6 +37,14 @@
         display: flex;
         justify-content: center;
 
+        @media (max-width: 768px)
+        {
+            // faz um conteúdo ficar em uma linha, mesmo que ele não caiba
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
+
         &__button
         {
             color: variaveis.$corTextoSecundario;
@@ -47,6 +60,11 @@
             &--is-active
             {
                 border-color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width: 768px)
+            {
+                font-size: 16px;
             }
         }
     }
